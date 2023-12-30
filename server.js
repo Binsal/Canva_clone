@@ -2,7 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const mongoose = require("mongoose");
-
+const path = require("path");
 const app = express();
 
 dotenv.config();
@@ -17,6 +17,13 @@ else{
     app.use(cors({
         credentials:true
     }))
+}
+
+if(process.env.NODE_ENV === "production"){
+    app.use(express.static(path.join(__dirname,"./frontend/dist")))
+    app.get('*',(req,res)=>{
+        res.sendFile(path.resolve(__dirname,'./','frontend','dist','index.html'))
+    })
 }
 
 const dbconnect = async ()=>{
