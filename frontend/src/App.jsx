@@ -4,11 +4,12 @@ import {
 } from "react-router-dom";
 
 import Index from "./pages/index";
+import Layout from "./pages/layout";
 
 const router  = createBrowserRouter([
   {
     path:"/",
-    element:<Index/>
+    element:<Layout/>
   }
 ])
 

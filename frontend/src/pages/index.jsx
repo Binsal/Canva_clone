@@ -5,7 +5,7 @@ import { FaFacebookF } from 'react-icons/fa'
 import toast from 'react-hot-toast'
 import "../App.css"
 
-const index = () => {
+const Index = () => {
     const [type, setType] = useState('')
     const [show, setShow] = useState(false)
     const [loader, setLoader] = useState(false)
@@ -170,4 +170,4 @@ const index = () => {
     )
 }
 
-export default index
+export default Index
